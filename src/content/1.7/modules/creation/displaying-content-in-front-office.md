@@ -65,7 +65,7 @@ Attaching code to a hook requires a specific method for each:
     {
         $this->context->controller->registerStylesheet(
             'mymodule-style',
-            $this->_path.'views/css/mymodule.css',
+            str_replace(__PS_BASE_URI__, '', $this->_path) .'views/css/mymodule.css',
             [
                 'media' => 'all',
                 'priority' => 1000,
@@ -74,7 +74,7 @@ Attaching code to a hook requires a specific method for each:
 
         $this->context->controller->registerJavascript(
             'mymodule-javascript',
-            $this->_path.'views/js/mymodule.js',
+            str_replace(__PS_BASE_URI__, '', $this->_path) .'views/js/mymodule.js',
             [
                 'position' => 'bottom',
                 'priority' => 1000,
